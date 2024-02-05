@@ -1,0 +1,75 @@
+<div [ngClass]="{'dark-mode': isDarkModeAactive}">
+  <div class="menu" (click)="toggleMenu()">
+    <fa-icon *ngIf="!iconClose" [icon]="fasBars"></fa-icon>
+    <fa-icon *ngIf="iconClose" [icon]="faClose"></fa-icon>
+  </div>
+
+  <div class="sidebar" [ngClass]="{'min-sidebar':isSidebarMinimized, 'max-sidebar': showSidebar}">
+    <div>
+      <div class="name-page">
+        <fa-icon [icon]="fasBars" (click)="toggleSidebar()"></fa-icon>
+        <i class="fas-solid fa-bars"></i>
+        <span [ngClass]="{'oculto': isOcultedSpan}">EcomEase</span>
+      </div>
+
+      <div class="line"></div>
+
+
+      <div class="user">
+        <div class="img">
+          <h2>DQ</h2>
+        </div>
+        <div class="user-info">
+          <span class="username" [ngClass]="{'oculto': isOcultedSpan}">DaniquimO8</span>
+          <span class="email" [ngClass]="{'oculto': isOcultedSpan}">Daniel.jose199@outlook.com</span>
+        </div>
+
+        <fa-icon [icon]="faElipsis"></fa-icon>
+
+      </div>
+
+      <div class="line"></div>
+    </div>
+
+
+    <!--<button class="button" >
+      <fa-icon [icon]="faPlus"></fa-icon>
+      <span [ngClass]="{'oculto': isOcultedSpan}">Create new</span>
+    </button>-->
+
+    <nav class="navegations">
+      <ul *ngFor="let nav of navegation">
+        <li >
+          <a [routerLink]="[nav.routeLink]">
+            <fa-icon [icon]="nav.icon"> </fa-icon>
+            <span [ngClass]="{'oculto':isOcultedSpan}">{{nav.name}}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div>
+      <div class="line"></div>
+
+      <div class="dark-mode-switch">
+        <div class="info">
+          <fa-icon [icon]="faMoon"></fa-icon>
+          <span [ngClass]="{'ocultar': isOcultedSpan}">Dark Mode</span>
+        </div>
+        <div class="switch" (click)="toggleDarkMode()">
+          <div class="base">
+            <div class="circule" [ngClass]="{'on':isDarkModeAactive}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+ <!--
+  <div class="main-responsive" [ngClass]="{'main':!isSidebarMinimized,'min-main':isSidebarMinimized}">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit reiciendis ratione architecto et. Ratione, dignissimos placeat itaque corporis voluptatum repellat modi, pariatur sed, quia deserunt harum quibusdam quos dolorum!</p>
+  </div>
+-->
+</div>
+

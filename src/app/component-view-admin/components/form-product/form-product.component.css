@@ -1,0 +1,27 @@
+.container-form{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+
+}
+
+
+form {
+
+    .row {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .buttons{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;  
+        button{
+            margin: 5px;
+        }
+        
+    }
+
+
+    
+}

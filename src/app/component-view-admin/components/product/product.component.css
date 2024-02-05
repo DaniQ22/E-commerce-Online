@@ -1,0 +1,82 @@
+td {
+    font-size: 15px;
+}
+
+.no-product {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    width: 30%;
+    padding: 5px;
+    margin: 0;
+
+    fa-icon {
+        margin: 5px;
+        font-size: 15px;
+    }
+
+    input {
+        border: none;
+        width: 100%;
+        margin-right: 5px;
+    }
+
+    button {
+        position: relative;
+        border: none;
+        background-color: rgb(175, 175, 238);
+        padding: 5px 5px;
+        border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            background-color: rgb(75, 236, 75);
+        }
+    }
+}
+
+.table {
+    border: 1px solid;
+    text-align: center;
+
+    .options {
+        width: 100%;
+    }
+
+    th {
+        background-color: rgb(49, 48, 48);
+        color: #fff;
+    }
+
+}
+
+.back-to-list {
+    right: 0;
+
+    button {
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        transition: color .5s ease;
+
+        border: none;
+
+        &:hover {
+            color: rgb(118, 153, 241);
+        }
+
+    }
+
+
+
+
+}

@@ -1,0 +1,117 @@
+<div class="products">
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 *ngIf="!isUpdateProduct" class="modal-title fs-5" id="staticBackdropLabel">Agregar un producto</h1>
+                    <h1 *ngIf="isUpdateProduct" class="modal-title fs-5" id="staticBackdropLabel">Editar un
+                        producto</h1>
+
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <app-form-product (emitterProductData)="onProductDataReceived($event)" [receiveProduct]="productToEdit"
+                    (emiiterProductToUpdate)="onProductDataReceivedToUpdate($event)"
+                    [isUpdateFalse]="isUpdateProduct"></app-form-product>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div *ngIf="ListProduct.length <= 0 " class="no-product">
+        <h2>{{erroLoadingProduct}}</h2>
+        <p>Agregue un producto nuevo</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        </button>
+    </div>
+
+
+    <div *ngIf="ListProduct.length != null" class="container-table">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <fa-icon [icon]="faIconAdd"></fa-icon>
+        </button>
+
+        <h2>Lista de productos</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="12">
+                        <div class="search">
+                            <input type="text" [(ngModel)]="nameToSearchsProducts"
+                                placeholder="Ingrese el nombre del producto">
+                            <button (click)="getProductsByName()"><fa-icon [icon]="faIconSearch"></fa-icon></button>
+
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Proveedor</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">F/V</th>
+                    <th scope="col">Acciones</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngIf="ListProductsByName.length <= 0">
+                <tr *ngFor="let products of ListProduct">
+                    <td scope="row">{{products.productId}}</td>
+                    <td>{{products.name}}</td>
+                    <td>{{products.categoryId}}</td>
+                    <td>{{products.providerId}}</td>
+                    <td>{{products.price}}</td>
+                    <td>{{products.description}}</td>
+                    <td>{{products.avalaible}}</td>
+                    <td>{{products.stockProduct}}</td>
+                    <td>{{products.expirationDate}}</td>
+                    <td><Button (click)="delete(products.productId)" class="btn btn-danger"><fa-icon
+                                [icon]="faIconDelte"></fa-icon></Button> | <button (click)="emitProductToEdit(products)"
+                            class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <fa-icon
+                                [icon]="faIconUpdate"></fa-icon></button></td>
+
+
+                </tr>
+            </tbody>
+
+            <tbody *ngIf="ListProductsByName.length > 0 ">
+                <tr *ngFor="let products of ListProductsByName">
+                    <td scope="row">{{products.productId}}</td>
+                    <td>{{products.name}}</td>
+                    <td>{{products.categoryId}}</td>
+                    <td>{{products.providerId}}</td>
+                    <td>{{products.price}}</td>
+                    <td>{{products.description}}</td>
+                    <td>{{products.avalaible}}</td>
+                    <td>{{products.stockProduct}}</td>
+                    <td>{{products.expirationDate}}</td>
+                    <td><Button (click)="delete(products.productId)" class="btn btn-danger"><fa-icon
+                                [icon]="faIconDelte"></fa-icon></Button> |
+                        <button class="btn btn-warning"> <fa-icon [icon]="faIconUpdate"></fa-icon></button>
+                    </td>
+
+
+                </tr>
+                <div class=" back-to-list">
+                    <button (click)="comeBackListProduct()">Regresar</button>
+
+                </div>
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

@@ -1,0 +1,71 @@
+<div class="container-form">
+  <form [formGroup]="formProduct">
+    <div class="row">
+      <div class="col-6">
+        <label class="form-label" for="name">Nombre</label>
+        <input type="text" class="form-control" placeholder="Xbox Saries s" formControlName="name">
+        <div *ngIf="formProduct.get('name')?.hasError('required') && formProduct.get('name')?.touched"
+          class="text-danger">
+          El nombre es obligatorio.
+        </div>
+      </div>
+      <div class="col-6">
+        <label class="form-label" for="form-label">Categoria</label>
+        <select class="form-select" id="" formControlName="categoryId">
+          <option selected disabled>Seleccione una categoría</option>
+          <option value="1">Tecnologia</option>
+          <option value="2">Deporte</option>
+          <option value="3">Comida</option>
+        </select>
+        <div *ngIf=""></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <label class="form-label">Proveedor</label>
+        <select class="form-select" formControlName="providerId">
+          <option selected>Escoge un provedor</option>
+          <option value="1005438555">Daniel Quiñonez</option>
+          <option value="98821234">Arroz del caribe</option>
+        </select>
+      </div>
+      <div class="col-6">
+        <label class="form-label">Cantidad de productos</label>
+        <input type="number" class="form-control" formControlName="stockProduct">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <label class="form-label">Descripcion</label>
+        <textarea class="form-control" name="" id="" cols="30" rows="10" formControlName="description"></textarea>
+      </div>
+
+      <div class="col-6">
+
+        <div class="col-12">
+          <label class="form-label" for="">Precio</label>
+          <div class="input-group">
+            <span class="input-group-text">$</span>
+            <input class="form-control" type="text" formControlName="price">
+            <span class="input-group-text">.00</span>
+
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Fecha de vencimiento</label>
+          <input type="date" class="form-control" formControlName="expirationDate">
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button *ngIf="!isUpdateFalse" type="submit" class="btn btn-primary" (click)="emitProductData()">Guardar</button>
+      <button *ngIf="isUpdateFalse" class="btn btn-success" (click)="editProduct()">Actualizar</button>
+    </div>
+
+
+  </form>
+</div>
