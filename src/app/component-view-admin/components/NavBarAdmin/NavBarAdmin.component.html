@@ -40,7 +40,9 @@
     <nav class="navegations">
       <ul *ngFor="let nav of navegation">
         <li >
-          <a [routerLink]="[nav.routeLink]">
+          <a [routerLink]="[nav.routeLink]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
             <fa-icon [icon]="nav.icon"> </fa-icon>
             <span [ngClass]="{'oculto':isOcultedSpan}">{{nav.name}}</span>
           </a>

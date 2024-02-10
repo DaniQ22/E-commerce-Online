@@ -1,10 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from '../service/product.service';
+import { AppRoutingModule } from '../app-routing.module';
+import { NavBarAdminComponent } from './components/NavBarAdmin/NavBarAdmin.component';
+
 
 @Component({
   selector: 'app-component-view-admin',
   templateUrl: './component-view-admin.component.html',
-  styleUrls: ['./component-view-admin.component.css']
+  styleUrls: ['./component-view-admin.component.css'],
+ 
 })
 export class ComponentViewAdminComponent implements OnInit {
   @Input() isMimizeSidebar!: boolean;

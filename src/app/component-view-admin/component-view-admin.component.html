@@ -1,13 +1,5 @@
+<app-NavBarAdmin (isNavBarMinimizadeEmitter)="toogleSideBar($event)"></app-NavBarAdmin>
 
-
-
-
-<div class="cotainer">
-  <div>
-    <app-NavBarAdmin (isNavBarMinimizadeEmitter)="toogleSideBar($event)"></app-NavBarAdmin>
-
-  </div>
-  <div class="main-responsive" [ngClass]="{'container-main':!isMimizeSidebar, 'container-min-main':isMimizeSidebar}">
-    <router-outlet></router-outlet>
-  </div>
+<div class="main-responsive" [ngClass]="{'container-main':!isMimizeSidebar, 'container-min-main':isMimizeSidebar}">
+  <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.panel-welcome {
+    border: 1px solid;
+    min-height: 100vh;
+    background-image: url("../../../E-commerce/src/assets/Panel.webp");
+    background-size: cover;
+}
+
+.panel-welcome .cover {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.342);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.panel-welcome .cover .tittle {
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 5rem;
+    color: #fff;
+}
+
+.panel-welcome .cover .cards {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+}
+
+.panel-welcome .cover .cards .customer, 
+.panel-welcome .cover .cards .admin{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.864);
+    margin-top: 100px;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+
+    &:hover{
+        transform: translateY(-5px);
+        transition: transform .3s ease;
+
+
+    }
+}
+
+.panel-welcome .cover .cards .customer, 
+.panel-welcome .cover .cards .admin{
+    .tittle-card {
+        text-align: center;
+        font-weight: 700;
+        font-size: 20px;
+        margin: 10px;
+    }
+    .text {
+        font: roboto;
+        text-align: center;
+    }
+    button {
+        position: absolute;
+        bottom: 40px;
+        padding: 5px 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: none;
+        background-color: black;
+        color: #fff;
+        border-radius: 10px;
+        outline: none;
+        transition: color .5s ease;
+
+        &:hover{
+            background-color: rgb(242, 71, 71);
+            color: black;
+
+        }
+
+      
+
+    }
+}
+

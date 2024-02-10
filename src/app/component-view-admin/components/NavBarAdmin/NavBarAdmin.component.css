@@ -196,6 +196,11 @@
             min-width: 50px;
         }
 
+        .active{
+            background-color: red;
+
+        }
+
         fa-icon {
             min-width: 50px;
             font-size: 25px;
@@ -316,6 +321,8 @@
 
 
 }
+
+
 
 .main {
     margin-left: 290px;

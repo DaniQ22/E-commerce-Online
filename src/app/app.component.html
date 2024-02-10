@@ -1,1 +1,35 @@
-<app-component-view-admin></app-component-view-admin>
+
+<div *ngIf="showPanel" class="panel-welcome">
+    <div class="cover">
+
+        <span class="tittle">Bienvenido a E_commerce</span>
+
+        <div class="cards">
+            <div class="customer">
+                <div class="tittle-card">
+                    ¿Eres un cliente?
+                </div>
+                <div class="text">
+                    Visita la pagina, aqui podras encontrar toda clase de productos para tu hogas, vamos!!
+                </div>
+                <span> </span>
+                <button>Ver</button>
+
+
+            </div>
+
+            <div class="admin">
+                <div class="tittle-card">
+                    <span>¿Eres un Administrador?
+
+                    </span>
+                </div>
+                <div class="text">
+                    Ingrese al panle de adminitracion con el siguiente boton
+                </div>
+                <button (click)="showLoginAdmin()" routerLink="/login-admin">Ver</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <router-outlet></router-outlet>

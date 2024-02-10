@@ -27,11 +27,12 @@
         <h2>{{erroLoadingProduct}}</h2>
         <p>Agregue un producto nuevo</p>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <fa-icon [icon]="faIconAdd"></fa-icon>
         </button>
     </div>
 
 
-    <div *ngIf="ListProduct.length != null" class="container-table">
+    <div *ngIf="ListProduct.length > 0 " class="container-table">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <fa-icon [icon]="faIconAdd"></fa-icon>
         </button>
